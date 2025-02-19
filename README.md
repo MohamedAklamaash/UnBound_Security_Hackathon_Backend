@@ -2,7 +2,9 @@ Chat Application with AI Model Routing
 
 This project implements a lightweight chat UI integrated with a secure backend server that dynamically routes user prompts based on predefined rules. The application supports user authentication, model listing, chat completions, regex-based routing, and file uploads.
 
-Features Implemented
+For the Working of the project see
+
+video/
 
 Milestone 1: User Authentication & Models API
 
@@ -50,7 +52,7 @@ Configurable routing logic for uploaded files.
 
 Routes files based on their type to the appropriate AI model.
 
-**Setup Instructions**
+Setup Instructions
 
 1. Clone the Repository
 
@@ -87,46 +89,49 @@ yarn start:dev
 
 yarn dev
 
-**Design Choices & Architecture**
+Architecture & Design Choices
 
 Backend (NestJS + PostgreSQL)
 
-NestJS is used as the backend framework.
+NestJS is used as the backend framework for modular and scalable development.
 
-JWT authentication for security.
+JWT authentication ensures secure access control.
 
-Prisma ORM for database interactions with PostgreSQL.
+Prisma ORM facilitates seamless database interactions with PostgreSQL.
 
-Regex-based routing managed dynamically via stored policies.
+Regex-based routing dynamically manages chat prompts based on predefined rules.
 
-Swagger for API documentation.
+Swagger is used for API documentation.
 
 Frontend (Next.js + TypeScript)
 
-Next.js (TypeScript) for a scalable frontend.
+Next.js (TypeScript) provides a robust and scalable frontend.
 
-Tailwind CSS for modern UI styling.
+Tailwind CSS is used for modern and responsive UI design.
 
-REST API communication with the backend.
+REST API is used for seamless communication with the backend.
 
-Admin panel to manage routing policies and user roles.
+Admin panel allows easy management of routing policies and user roles.
 
-**Usage Workflow**
+Usage Workflow
 
 Users register and authenticate via JWT-based login.
 
 Authenticated users can chat with different AI models.
 
-Messages are processed and routed dynamically using regex rules stored in the database.
+Messages are dynamically routed using regex rules stored in the database.
 
 Admins can configure and modify regex-based routing rules.
 
 Users can upload PDFs, which are processed and routed to specific AI models based on predefined policies.
 
-The frontend provides an intuitive chat UI for user interactions.
+The frontend provides an intuitive chat UI for seamless user interactions.
 
-**API Documentation**
+API Documentation
+(link)[https://unbound-security-hackathon-backend-1.onrender.com/api]
 
 Swagger documentation is available at:
+API Documentation
 
-{backend_url}/api
+Done By
+Mohamed Aklamaash
