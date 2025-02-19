@@ -136,7 +136,7 @@ export class AuthService {
         const mailOptions = {
             from: SENDER_EMAIL,
             to: email,
-            subject: "OTP Verification for Sample App",
+            subject: "OTP Verification for Hackathon App",
             html: `<p>This is the OTP for your email verification: <strong>${otp}</strong></p>`,
         };
 
