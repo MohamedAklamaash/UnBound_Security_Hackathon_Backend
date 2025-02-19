@@ -12,15 +12,16 @@ export class RoutingPolicyService {
 
         for (const policy of policies) {
             try {
-                const regex = new RegExp(policy.regexPattern, 'i');
+                const regex = new RegExp(policy.regexPattern, "i");
                 if (regex.test(prompt)) {
                     console.log(`Matched: ${policy.regexPattern} → Redirecting to ${policy.redirectModel}`);
                     return policy.redirectModel;
                 }
             } catch (error) {
-                throw new HttpException("Invalid regex pattern in DB", 400)
+                console.error(`Invalid regex pattern in DB: ${policy.regexPattern}`, error);
             }
         }
+
 
         return model;
     }

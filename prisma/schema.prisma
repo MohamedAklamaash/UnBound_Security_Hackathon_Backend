@@ -32,9 +32,24 @@ model User {
 }
 
 model Model {
-  id       String @unique @default(uuid())
-  provider String @unique()
+  id       String @id @default(uuid())
+  provider String
   model    String
+
+  chats Chat[]
+
+  @@unique([provider, model])
+}
+
+model Chat {
+  id             String  @id @default(uuid())
+  model          String
+  provider       String
+  prompt         String
+  isFileUploaded Boolean @default(false)
+  FileName       String? @default("")
+
+  modelRelation Model @relation(fields: [provider, model], references: [provider, model], onDelete: Cascade)
 }
 
 model RoutingPolicy {

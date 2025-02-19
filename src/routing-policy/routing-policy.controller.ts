@@ -55,5 +55,4 @@ export class RoutingPolicyController {
         }
         return this.routingPolicyService.deletePolicy(dto.id)
     }
-
 }
