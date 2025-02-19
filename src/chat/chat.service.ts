@@ -18,6 +18,8 @@ export class ChatService {
         if (!m) {
             throw new HttpException("Request Model Not found", 404)
         }
+        let p = provider.toLocaleLowerCase()
+        let mu = model.toLocaleLowerCase()
 
         await this.prisma.chat.create({
             data: {
@@ -28,8 +30,7 @@ export class ChatService {
                 FileName
             }
         })
-
-        let resp = staticResponses[provider] || staticResponses?.provider
+        let resp = staticResponses[mu] || staticResponses?.m || staticResponses?.p || staticResponses[p]
 
         if (!resp) {
             resp = "Generating a static response"

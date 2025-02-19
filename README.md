@@ -54,8 +54,8 @@ Routes files based on their type to the appropriate AI model.
 
 1. Clone the Repository
 
-git clone https://github.com/your-repo/chat-app.git
-cd chat-app
+git clone https://github.com/MohamedAklamaash/UnBound_Security_Hackathon_Backend.git
+cd UnBound_Security_Hackathon_Backend
 
 2. Install Dependencies
 
