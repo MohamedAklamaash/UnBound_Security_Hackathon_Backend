@@ -130,15 +130,3 @@ The frontend provides an intuitive chat UI for user interactions.
 Swagger documentation is available at:
 
 {backend_url}/api
-
-**Future Enhancements**
-
-Support for additional file types (e.g., audio, video).
-
-WebSocket-based real-time chat functionality.
-
-Integration with additional AI providers.
-
-Role-based access control for enhanced security.
-
-This project successfully implements a secure and scalable chat platform with dynamic prompt and file routing.
