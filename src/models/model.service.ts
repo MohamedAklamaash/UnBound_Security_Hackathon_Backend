@@ -7,6 +7,8 @@ export class ModelService {
     constructor(private prisma: PrismaService) { }
     async addAmodel(dto: ModelDTO) {
         const { name } = dto
+        console.log(dto);
+        
         const model = await this.prisma.model.create(
             {
                 data: {
