@@ -41,6 +41,17 @@ model Model {
   @@unique([provider, model])
 }
 
+model FileUploadRoute {
+  id         String   @id @unique @default(uuid())
+  fileType   String   @unique
+  provider   String
+  model      String
+  createdAt  DateTime @default(now())
+  
+  @@map("file_upload_routes")
+}
+
+
 model Chat {
   id             String  @id @default(uuid())
   model          String
@@ -58,8 +69,10 @@ model RoutingPolicy {
   originalModel String
   regexPattern  String
   redirectModel String
+  fileType      String? @unique // might get an error here
 
   createdAt DateTime @default(now())
 
   @@map("routing_policies")
 }
+

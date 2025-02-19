@@ -7,6 +7,8 @@ import { ModelController } from './models/model.controller';
 import { ModelModule } from './models/model.module';
 import { ChatModule } from './chat/chat.module';
 import { RoutingPolicyModule } from './routing-policy/routing-policy.module';
+import { FileUploadModule } from './fileupload/fileupload.module';
+import { AdminModule } from './admin/admin.module';
 
 // decorator adds metadata to the class or the function
 // modules help us organize controllers 
@@ -14,7 +16,7 @@ import { RoutingPolicyModule } from './routing-policy/routing-policy.module';
   // config module for envs
   imports: [ConfigModule.forRoot({
     isGlobal: true
-  }), AuthModule, UserModule, PrismaModule, ModelModule, ChatModule, RoutingPolicyModule]
+  }), AuthModule, UserModule, PrismaModule, ModelModule, ChatModule, RoutingPolicyModule, FileUploadModule, AdminModule]
 })
 export class AppModule {
 
