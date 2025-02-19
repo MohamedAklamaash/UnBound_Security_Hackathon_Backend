@@ -6,16 +6,16 @@ export class FileUploadService {
     constructor(private readonly prisma: PrismaService) {}
 
     async processFileUpload(fileType: string) {
-        const route = await this.prisma.routingPolicy.findUnique({
+        const route = await this.prisma.routingPolicy.findMany({
             where: { fileType },
         });
-
+        
         if (!route) {
             throw new BadRequestException("No processing route found for this file type");
         }
 
-        const provider = route.provider.toLowerCase();
-        const model = route.redirectModel;
+        const provider = route[0].provider.toLowerCase();
+        const model = route[0].redirectModel;
 
         switch (provider) {
             case "anthropic":

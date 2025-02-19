@@ -43,7 +43,7 @@ model Model {
 
 model FileUploadRoute {
   id         String   @id @unique @default(uuid())
-  fileType   String   @unique
+  fileType   String
   provider   String
   model      String
   createdAt  DateTime @default(now())
@@ -69,7 +69,7 @@ model RoutingPolicy {
   originalModel String
   regexPattern  String
   redirectModel String
-  fileType      String? @unique // might get an error here
+  fileType      String @default("pdf")// might get an error here
 
   createdAt DateTime @default(now())
 

@@ -14,7 +14,6 @@ export class RoutingPolicyService {
             try {
                 const regex = new RegExp(policy.regexPattern, "i");
                 if (regex.test(prompt)) {
-                    console.log(`Matched: ${policy.regexPattern} → Redirecting to ${policy.redirectModel}`);
                     return policy.redirectModel;
                 }
             } catch (error) {
