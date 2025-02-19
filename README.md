@@ -2,9 +2,10 @@ Chat Application with AI Model Routing
 
 This project implements a lightweight chat UI integrated with a secure backend server that dynamically routes user prompts based on predefined rules. The application supports user authentication, model listing, chat completions, regex-based routing, and file uploads.
 
-For the Working of the project see
+## For the Working of the Project, See the Video
 
-video/
+[Watch the video](https://github.com/MohamedAklamaash/UnBound_Security_Hackathon_Backend/blob/main/video/UnBound_Video.mp4)
+
 
 Milestone 1: User Authentication & Models API
 
