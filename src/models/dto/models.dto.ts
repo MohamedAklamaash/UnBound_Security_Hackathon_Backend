@@ -1,4 +1,5 @@
 
 export class ModelDTO {
-    name: string
+    model: string
+    provider: string
 }

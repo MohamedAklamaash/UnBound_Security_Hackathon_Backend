@@ -1,4 +1,4 @@
-import {Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ModelDTO } from './dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
@@ -6,17 +6,17 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class ModelService {
     constructor(private prisma: PrismaService) { }
     async addAmodel(dto: ModelDTO) {
-        const { name } = dto
-        console.log(dto);
-        
-        const model = await this.prisma.model.create(
+        const { model, provider } = dto
+
+        const m = await this.prisma.model.create(
             {
                 data: {
-                    name
+                    model,
+                    provider
                 }
             }
         )
-        return { message: "Model created", model }
+        return { message: "Model created", model: m }
     }
 
     async ListAllModel() {

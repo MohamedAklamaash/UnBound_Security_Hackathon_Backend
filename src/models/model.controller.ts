@@ -14,10 +14,9 @@ export class ModelController {
     @Post("create")
     @HttpCode(201)
     async addaModel(@UserDecorator() user: User, @Body() dto: any) {
-        const { name } = dto        
-        if (user.role === Role.USER) {
-            return { message: "Only admins can add a new model" }
-        }
+        // if (user.role === Role.USER) {
+        //     return { message: "Only admins can add a new model" }
+        // }
         return this.modelservice.addAmodel(dto)
     }
 

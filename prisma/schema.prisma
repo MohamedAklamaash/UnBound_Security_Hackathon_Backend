@@ -33,5 +33,7 @@ model User {
 
 model Model {
   id String @unique @default(uuid())
-  name   String   @unique()
+  provider   String   @unique()
+  model String
+  
 }
