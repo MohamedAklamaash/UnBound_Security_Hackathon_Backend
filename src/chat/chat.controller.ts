@@ -1,7 +1,9 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post, UseGuards } from "@nestjs/common";
 import { ChatService } from "./chat.service";
 import { ChatDTO } from "./dto";
+import { JwtGuard } from "src/guards";
 
+@UseGuards(JwtGuard)
 @Controller("v1/chat")
 export class ChatController {
     constructor(private chatService: ChatService) { }

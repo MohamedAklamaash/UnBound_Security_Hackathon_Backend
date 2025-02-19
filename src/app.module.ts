@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ModelController } from './models/model.controller';
 import { ModelModule } from './models/model.module';
 import { ChatModule } from './chat/chat.module';
+import { RoutingPolicyModule } from './routing-policy/routing-policy.module';
 
 // decorator adds metadata to the class or the function
 // modules help us organize controllers 
@@ -13,7 +14,7 @@ import { ChatModule } from './chat/chat.module';
   // config module for envs
   imports: [ConfigModule.forRoot({
     isGlobal: true
-  }), AuthModule, UserModule, PrismaModule, ModelModule, ChatModule]
+  }), AuthModule, UserModule, PrismaModule, ModelModule, ChatModule, RoutingPolicyModule]
 })
 export class AppModule {
 

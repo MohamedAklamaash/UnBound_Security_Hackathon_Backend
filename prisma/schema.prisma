@@ -32,8 +32,19 @@ model User {
 }
 
 model Model {
-  id String @unique @default(uuid())
-  provider   String   @unique()
-  model String
-  
+  id       String @unique @default(uuid())
+  provider String @unique()
+  model    String
+}
+
+model RoutingPolicy {
+  id            String @id @unique @default(uuid())
+  provider      String
+  originalModel String
+  regexPattern  String
+  redirectModel String
+
+  createdAt DateTime @default(now())
+
+  @@map("routing_policies")
 }

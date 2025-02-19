@@ -22,4 +22,12 @@ export class PrismaService extends PrismaClient {
             this.user.deleteMany()
         ])
     }
+
+    async onModuleInit() {
+        await this.$connect();
+    }
+
+    async onModuleDestroy() {
+        await this.$disconnect();
+    }
 }
